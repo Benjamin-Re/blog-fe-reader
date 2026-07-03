@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {Card } from '../components/Card'
+import { Card } from '../components/Card'
 import styles from './HomePage.module.css'
 
 export function HomePage () {
@@ -15,7 +15,7 @@ export function HomePage () {
             <h1>ALl Posts</h1>
             <div className={styles.cardContainer}>
             { posts.map((post) => (
-                <Card title={post.title} content={post.content}></Card>
+                <Card key={post.id} id={post.id} title={post.title} content={post.content}></Card>
             ))}
             </div>
         </>
