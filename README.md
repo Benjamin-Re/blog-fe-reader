@@ -1,2 +1,2 @@
 # TODO
-- add CRUD for comments []
+- add comments per post [x] (should be deletable only from CMS)
