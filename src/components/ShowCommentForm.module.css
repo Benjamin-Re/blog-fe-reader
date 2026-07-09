@@ -1,0 +1,12 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 10px;
+}
+
+.form input {
+    background: white;
+    color: black;
+    padding: .5rem;
+}

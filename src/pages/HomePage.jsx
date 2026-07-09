@@ -12,7 +12,7 @@ export function HomePage () {
 
     return (
         <>
-            <h1>ALl Posts</h1>
+            <h1>All Posts:</h1>
             <div className={styles.cardContainer}>
             { posts.map((post) => (
                 <Card key={post.id} id={post.id} title={post.title} content={post.content}></Card>

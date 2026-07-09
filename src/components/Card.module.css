@@ -1,6 +1,11 @@
 .card {
-    border: 2px red solid;
+    border: 1px solid #aa3bff;
+    border-radius: 10px;
     text-align: left;
     padding: 1rem;
-    width: 30%;
+    margin: .5rem;
+    width: 35%;
+    height: 500px;
+    line-height: 2.5rem;
+    overflow-y: scroll;
 }

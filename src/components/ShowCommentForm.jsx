@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './ShowCommentForm.module.css'
 
 export function ShowCommentForm(props) {
   const [author, setAuthor] = useState('');
@@ -17,7 +18,7 @@ export function ShowCommentForm(props) {
   }
   return (
     <>
-      <form>
+      <form className={styles.form}>
         <label htmlFor="author">Author: </label>
         <input
           type="text"
