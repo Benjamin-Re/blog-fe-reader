@@ -9,3 +9,9 @@
     line-height: 2.5rem;
     overflow-y: scroll;
 }
+
+@media (max-width: 430px) {
+    .card {
+        width: 100%;
+    }
+}
