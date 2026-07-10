@@ -5,7 +5,7 @@ import styles from './HomePage.module.css'
 export function HomePage () {
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        fetch("http://localhost:3000/posts")
+        fetch("https://blog-api-silk-nine.vercel.app/posts")
         .then((res) => res.json())
         .then((data) => setPosts(data))
     }, [])
