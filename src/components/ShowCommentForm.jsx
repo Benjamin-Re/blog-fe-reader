@@ -7,7 +7,7 @@ export function ShowCommentForm(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("https://blog-api-silk-nine.vercel.app/comments/create", {
+    fetch("http://localhost:3000/comments/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

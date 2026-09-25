@@ -1,14 +1,9 @@
-import { useEffect, useState } from 'react'
 import { Card } from '../components/Card'
 import styles from './HomePage.module.css'
+import { usePosts } from '../hooks/usePosts.js'
 
 export function HomePage () {
-    const [posts, setPosts] = useState([])
-    useEffect(() => {
-        fetch("https://blog-api-silk-nine.vercel.app/posts")
-        .then((res) => res.json())
-        .then((data) => setPosts(data))
-    }, [])
+    const { posts } = usePosts()
 
     return (
         <>

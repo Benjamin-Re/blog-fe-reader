@@ -11,11 +11,11 @@ export function PostPage() {
     const [showCommentForm, setShowCommentForm] = useState(false)
     const [comments, setComments] = useState(null)
     useEffect(() => {
-        fetch(`https://blog-api-silk-nine.vercel.app/posts/${id}`)
+        fetch(`http://localhost:3000/posts/${id}`)
         .then(res => res.json())
         .then(data => setPost(data.post))
 
-        fetch(`https://blog-api-silk-nine.vercel.app/comments/post/${id}`)
+        fetch(`http://localhost:3000/comments/post/${id}`)
         .then(res => res.json())
         .then(data => setComments(data))
     }, [id])
