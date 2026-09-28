@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from './ShowCommentForm.module.css'
+import { postCreateComment } from '../api/comments'
 
 export function ShowCommentForm(props) {
   const [author, setAuthor] = useState('');
@@ -7,13 +8,7 @@ export function ShowCommentForm(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/comments/create", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ author: author, body: body, postId: props.postId }),
-    });
+    postCreateComment(author, body, props.postId)
     props.onSubmitSuccess()
   }
   return (

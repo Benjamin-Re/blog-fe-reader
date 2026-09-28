@@ -1,25 +1,18 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import DOMPurify from "dompurify";
 import { ShowCommentForm } from '../components/ShowCommentForm'
 import { Comment } from '../components/Comment'
 import styles from './PostPage.module.css'
+import { useGetPostById } from '../hooks/useGetPostById'
+import { useGetComments } from '../hooks/useGetComments'
 
 export function PostPage() {
     const { id } = useParams(); // grabs the ":id" from the URL
-    const [post, setPost] = useState(null)
     const [showCommentForm, setShowCommentForm] = useState(false)
-    const [comments, setComments] = useState(null)
-    useEffect(() => {
-        fetch(`http://localhost:3000/posts/${id}`)
-        .then(res => res.json())
-        .then(data => setPost(data.post))
-
-        fetch(`http://localhost:3000/comments/post/${id}`)
-        .then(res => res.json())
-        .then(data => setComments(data))
-    }, [id])
-
+    const { post } = useGetPostById(id)
+    const { comments } = useGetComments(id)
+    console.log(`comments: ${comments}`)
     function handleClick () {
         setShowCommentForm(!showCommentForm)
     }

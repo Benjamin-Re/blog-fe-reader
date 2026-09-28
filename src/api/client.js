@@ -1,12 +1,11 @@
 // Fetch wrapper
 
 export async function request(path, options) {
-  const { method, body, token } = options;
+  const { method, body } = options;
   let headers = {};
   if (body !== undefined) {
     headers["Content-Type"] = "application/json";
   }
-  if (token) headers["Authorization"] = `Beaerer ${token}`;
   let res;
   try {
     res = await fetch(`${import.meta.env.VITE_BASE_URL}${path}`, {
