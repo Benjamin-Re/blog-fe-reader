@@ -68,6 +68,71 @@
         },
         "status": 200
       }
+    },
+    {
+      "description": "a request for one post",
+      "request": {
+        "method": "GET",
+        "path": "/posts/1"
+      },
+      "response": {
+        "body": {
+          "post": {
+            "content": "My Content",
+            "id": 1,
+            "timestamp": "2026-01-01T00:00:00Z",
+            "title": "My Post"
+          }
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.post.content": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.post.id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.post.timestamp": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.post.title": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
     }
   ],
   "metadata": {
